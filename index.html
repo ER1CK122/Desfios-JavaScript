@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bomba da Tidas</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="margin-10">Contagem regressiva:</div>
+          <div class="margin-left-70" id="tempo"></div>
+          <div class="margin-10">Coloque a <a href="senhaAqui.html" target="_blank">senha</a> aqui</div>
+          <input type="number" name="" id="senha">
+          <button onclick="verificarSenha()">Verificar Senha</button>
+          <div class="modal-yes display-none" id="modal-yes">
+              <div class="text-modal">Parabéns você desarmou a BOMBA, você salvou a todos, você passou no teste soldado</div>
+          </div>
+          <div class="modal-no display-none" id="modal-no">
+            <div class="text-modal">A BOMBA explodiu, causando a morte de todos, você fracassou no teste soldado</div>
+        </div>
+
+        </div>
+    </main>
+    <script src="bombaTidas.js"></script>
+</body>
+</html>

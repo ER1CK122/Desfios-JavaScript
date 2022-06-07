@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+  </head>
+  <style>
+    .container {
+      width: 900px;
+      margin: 0 auto;
+    }
+    
+    .btn-modal{
+      width: 90px;
+      margin: 0 auto;
+    }
+
+    .invisible{
+      
+    }
+
+    .mb-4 {
+      margin-bottom: 16px;
+    }
+
+    .alert {
+      padding: 16px;
+    }
+
+    .bg-purple{
+      background-color: purple;
+    }
+
+    .modal {
+      display: none;
+    }
+
+    .modal.in {
+      display: block;
+    }
+
+    .alert-success {
+      color: green;
+    }
+  </style>
+  <body>
+    <main>
+      <div class="container">
+        <div class="mb-4">
+          <label for="">Primeiro valor</label>
+          <input type="number" name="" id="primeiroValor">
+        </div>
+        <div class="mb-4">
+          <label for="">Operador</label>
+          <select id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="">Segundo valor</label>
+          <input type="number" name="" id="segundoValor">
+        </div>
+        <div id="mensagem" class="alert alert-success mb-4"></div>
+        <button onclick="calcular()">Cálcular</button>
+      </div>
+
+      <div class="btn-modal">
+        <button class="bg-purple" style="height: 50px; width: 100xp;" onclick="apareceu()">Abrir Modal</button>
+        <div>A sua Senha é: 835947</div>
+      </div>
+
+      <div class="modal" id="modal" >
+        esse é meu modal
+      </div>
+    </main>
+  </body>
+  <script src="./modal.js">
+  </script>
+</html>

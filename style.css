@@ -1,0 +1,45 @@
+.container{
+    width: 900px;
+    margin: 200px 500px;
+}
+
+.margin-10{
+    margin: 10px;
+}
+
+.margin-left-70{
+  margin-left: 70px;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.display-none{
+   display: none;
+}
+
+.display-block{
+  display: block;
+}
+
+.modal-yes{
+  margin-top: 30px;
+  width: 300px;
+  height: 150px;
+  background-color: aquamarine;
+}
+
+.modal-no{
+  margin-top: 30px;
+  width: 300px;
+  height: 150px;
+  background-color: red;
+}
+
+
+.text-modal{
+  text-align: center;
+  padding: 50px;
+}
