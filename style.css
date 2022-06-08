@@ -1,49 +1,61 @@
 .container{
-    width: 900px;
-    margin: 200px 500px;
+  margin: 20% auto;
+  text-align: center;
 }
 
-.margin-10{
-    margin: 10px;
+.modal{
+  visibility: hidden;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+  position: relative;
+  border-radius: 5px;
+  background: rgb(4, 210, 193);
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  opacity: 0;
 }
 
-.margin-left-70{
-  margin-left: 70px;
+.modal:target{
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
-a{
-  color: #fff;
-  text-decoration: none;
-}
-
-.display-none{
-   display: none;
-}
-
-.display-block{
-  display: block;
-}
-
-.modal-yes{
-  margin-top: 30px;
-  width: 300px;
-  height: 150px;
-  background-color: aquamarine;
-}
-
-.border-radius-6{
-  border-radius: 6px;
+.modal-yes  div{
+  position: relative;
+  margin: 0 auto;
 }
 
 .modal-no{
-  margin-top: 30px;
-  width: 300px;
-  height: 150px;
-  background-color: red;
+  display: none;
+  margin: 0 auto;
+  width: 500px;
+  position: relative;
+  border-radius: 5px;
+  background: rgb(210, 4, 4);
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+  opacity: 0;
 }
 
+.modal-no:target{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-no > div{
+  position: relative;
+  margin: 10% auto;
+}
 
 .text-modal{
   text-align: center;
-  padding: 45px;
+  font-size: 40px;
+  margin: 10px;
+  color: #FFFFFF;
 }

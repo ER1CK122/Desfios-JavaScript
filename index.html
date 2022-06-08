@@ -9,20 +9,29 @@
 </head>
 <body>
     <main>
-        <div class="container">
-            <div class="margin-10">Contagem regressiva:</div>
-          <div class="margin-left-70" id="tempo"></div>
-          <div class="margin-10">Coloque a <a href="senhaAqui.html" target="_blank">senha</a> aqui</div>
-          <input type="number" name="" id="senha">
-          <button onclick="verificarSenha()">Verificar Senha</button>
-          <div class="modal-yes display-none border-radius-6" id="modal-yes">
-              <div class="text-modal">A BOMBA foi desarmada, salvando a todos, meus parabéns você passou no teste soldado</div>
-          </div>
-          <div class="modal-no display-none border-radius-6" id="modal-no">
-            <div class="text-modal">A BOMBA explodiu, causando a morte de todos, você fracassou no teste soldado</div>
+      <div class="container">
+
+        <div class="">Contagem regressiva:</div>
+          
+        <div class="" id="tempo"></div>
+          
+        <div class="">Coloque a senha aqui</div>
+          
+        <input type="number" name="" id="senha">
+          
+        <button onclick="verificarSenha()">Verificar Senha</button>
+          
+        <a href="#modal-yes">abrir modal</a>
+          
+        <div class="modal" id="modal-yes">
+          <p class="text-modal">A BOMBA foi desarmada, salvando a todos, meus parabéns você passou no teste soldado</p>
+        </div>
+          
+        <div class="modal-no" id="modal-no">
+          <p class="text-modal">A BOMBA explodiu, causando a morte de todos, você fracassou no teste soldado</p>
         </div>
 
-        </div>
+      </div>
     </main>
     <script src="bombaTidas.js"></script>
 </body>

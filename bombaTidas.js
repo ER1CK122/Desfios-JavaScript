@@ -1,21 +1,24 @@
+let tentativas = 3;
+
 function verificarSenha(){
   let senha = document.querySelector('#senha').value;
   let modalNo = document.querySelector('#modal-no');
   let modalYes = document.querySelector('#modal-yes');
-  let tentativas = 3;
   
-  
-  do{ 
-    if(senha == 835947){ 
-      modalYes.classList.toggle('display-block');
-      console.log('Passou no teste');
-      break;
-}else{ 
-      modalNo.classList.toggle('display-block');
-      console.log('Reprovou no teste');
-    };
-  }while(--tentativas < 0);
-  
+  if(senha == 835947){ 
+    
+    console.log('Passou no teste soldado');
+  }
+
+  if (tentativas == 0) {
+    console.log('Reprovou no teste soldado');   
+  } else {
+    tentativas = tentativas -1
+  }
+
+
+ console.log(tentativas)
+
 
   
 };
