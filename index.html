@@ -6,31 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Bomba da Tidas</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <main>
+
+<body style="margin: 0;">
+    <main style="height: 100vh;">
       <div class="container">
-        <div>
-          <div class="">Contagem regressiva:</div>
+          <div class="margin-bottom-5">Contagem regressiva:</div>
             
-          <div class="" id="tempo"></div>
+          <div class="margin-bottom-5" id="time"></div>
             
-          <div class="">Coloque a <a href="senhaAqui.html">senha</a> aqui</div>
+          <div class="margin-bottom-5">Coloque a senha aqui</div>
             
-          <input type="number" name="" id="senha" class="item">
+          <input type="number" name="" id="password" class="margin-bottom-5">
+
+          <div class="c-or-e"></div>
             
-          <button onclick="verificarSenha()" class="item">Verificar Senha</button>
-            
-          <div class="modal modal-yes" id="modal-yes">
-            <p class="text-modal">A BOMBA foi desarmada</p>
-          </div>
-            
-          <div class="modal modal-no" id="modal-no">
-            <p class="text-modal">A BOMBA explodiu</p>
-          </div>
-        </div>
+          <button onclick="checkPassword()" class="">Verificar Senha</button>
       </div>
     </main>
+
+    <div class="modal-wrapper" id="modal">
+      <div class="overlay" onclick="closeModal2()"></div>
+      
+      <div class="modal">
+        <div class="modal-header">
+          <h1>Status da bomba:</h1>
+        </div>
+        
+        <div class="modal-body">
+        </div>
+        
+        <div class="modal-footer">
+          <button id="close-modal" onclick="closeModal2()">Ok, entendi!</button>
+      </div>
+    </div>
+
     <script src="bombaTidas.js"></script>
+    <script src="bombaTidas2.js"></script>
+
 </body>
 </html>
