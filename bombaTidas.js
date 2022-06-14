@@ -18,11 +18,11 @@ function checkPassword(){
 
     modalBody.innerHTML = "A Bomba Foi Desarmada";
     console.log('Passou no teste soldado');
-    cOrE.innerHTML = "*A senha está correta parabéns*"
-    cOrE.classList.add('turquoise')
+    cOrE.innerHTML = "*A senha está correta parabéns*";
+    cOrE.classList.add('turquoise');
   }else{
     cOrE.innerHTML = "*A senha está incorreta, tente novamente*";
-    cOrE.classList.add('red')
+    cOrE.classList.add('red');
   }
 
   if (tentativas == 0) {    
