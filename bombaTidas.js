@@ -1,115 +1,87 @@
 let tentativas = 2;
 
 function checkPassword(){
-  let password = document.querySelector('#password').value;
-  let modal = document.querySelector('.modal-wrapper');
-  let modalBody = document.querySelector('.modal-body');
-  let cOrE = document.querySelector('.c-or-e');
+    let password = $("#password").val();
+    let modal = $(".modal-wrapper");
+    let modalBody = $(".modal-body");
+    let cOrE = $(".c-or-e");
 
-  document.querySelector("body").classList.add('overflow-none');
+    $("body").addClass('overflow-none');
+
+    if(password == 835947){
+        $(modal).css("display", "flex");
+       
+        setTimeout(function(){
+            $(modal).addClass('in modal-yes');
+        }, 200);
+
+        $(modalBody).html("A Bomba Foi Desarmada");
+        
+        console.log('Passou no teste soldado');
+
+        $(cOrE).html("*A senha está correta parabéns*").addClass('turquoise');
+    }else{
+        $(cOrE).html("*A senha está incorreta, tente novamente*").addClass('red');
+    }
+
+    if(tentativas == 0){
+        $(modal).css("display", "flex");
+       
+        setTimeout(function(){
+            $(modal).addClass('in modal-no');
+        }, 200);
+
+        $(modalBody).html("A Bomba Explodiu");
+        
+        console.log('Reprovou no teste soldado');
+    }else{
+        tentativas = tentativas - 1;
+    }
+
+    console.log("tentativas restantes: " + tentativas);
+}
 
 
-  if(password == 835947){   
-    modal.style.display = "flex";
+function closeModal() {
+    $("#modal").removeClass("in");
+    
+    $("body").removeClass("overflow-none");
 
     setTimeout(function(){
-      modal.classList.add("in", "modal-yes");
-    }, 200);
+        $("#modal").hide();
+    }, 150);
+    
+    console.log('Fecho o modal');
+}
+function tempoDaBomba(duration, tempo){
+    let modalBody = $('.modal-body');
 
-    modalBody.innerHTML = "A Bomba Foi Desarmada";
-    console.log('Passou no teste soldado');
-    cOrE.innerHTML = "*A senha está correta parabéns*";
-    cOrE.classList.add('turquoise');
-  }else{
-    cOrE.innerHTML = "*A senha está incorreta, tente novamente*";
-    cOrE.classList.add('red');
-  }
+    let myTimer = setInterval(function(){
+        
+        $(tempo).html(duration);
 
-  if (tentativas == 0) {    
-    modal.style.display = "flex";
+        if(duration > 0){
+            duration = --duration
+        } else{
+            $(modal).css("display", "flex");
+       
+            setTimeout(function(){
+                $(modal).addClass('in modal-no');
+            }, 200);
 
-    setTimeout(function(){
-      modal.classList.add("in", "modal-no");
-    }, 200);
- 
-    modalBody.innerHTML = "A Bomba Explodiu";
-    console.log('Reprovou no teste soldado');
-
-
-  } else {
-    tentativas = tentativas - 1;
-  }
-
-  console.log("tentativas restantes: " + tentativas);
-};
-
-function closeModal(){
-  let modal = document.querySelector('#modal');
-
-  document.querySelector("body").classList.remove('overflow-none');
-
-  modal.classList.remove("in");
-
-  setTimeout(function(){
-    modal.style.display = "none";
-  }, 150);
-
-  console.log('Fecho o modal');
+            $(modalBody).html("A Bomba Explodiu");
+            
+            console.log('Reprovou no teste soldado');
+        
+            clearInterval(myTimer);
+        }
+    }, 1000);
 }
 
-function tempoDaBomba(duration, tempo) {
-  let modalBody = document.querySelector('.modal-body');
-
-  let timer = duration, seconds;
-  
-  setInterval(function () {
-    seconds = parseInt(timer % 60, 10);
+$(document).ready(function() {
+    let duration = 30;
     
-    tempo.textContent = seconds;
+    let tempo = $('#time');
     
-    if (--timer < 0) {
-      timer = duration;
-    };
-
-    if (timer == 0) {
-      modal.style.display = "flex";
-      setTimeout(function(){
-        modal.classList.add("in", "modal-no");
-      }, 200);
-      
-      modalBody.innerHTML = "A Bomba Explodiu";
-      console.log('Reprovou no teste soldado');
-      duration = -1;
-    };
-
-  }, 1000);
-}
-
-function tempoDaBomba2(duration, tempo) {
-  let modalBody = document.querySelector('.modal-body'); 
-  
-   let mytimer = setInterval(function () { 
-    tempo.textContent = duration;
-    
-    if (duration > 0 ) {
-      duration = --duration
-    } else {
-      modal.style.display = "flex";
-      setTimeout(function(){
-        modal.classList.add("in", "modal-no");
-      }, 200);
-      
-      modalBody.innerHTML = "A Bomba Explodiu";
-      console.log('Reprovou no teste soldado');   
-      
-      clearInterval(mytimer);
-    } 
-  }, 1000);
-}
-
-window.onload = function () {
-  let duration = 30;
-  let tempo = document.querySelector('#time');
-  tempoDaBomba2(duration, tempo); 
-};
-
+    tempoDaBomba(duration, tempo);
+});
