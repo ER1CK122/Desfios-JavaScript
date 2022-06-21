@@ -98,3 +98,7 @@ input{
 body{
   color: #000;
 }
+
+.table{
+  border: 5px solid #000;
+}
